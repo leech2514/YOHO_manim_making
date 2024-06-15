@@ -1,0 +1,61 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="business.print" />
+          <option value="business.ValueError" />
+          <option value="business.main_menu" />
+          <option value="view.print" />
+          <option value="view.main_menu" />
+          <option value="view.student_menu" />
+          <option value="view.admin_menu" />
+          <option value="view.teacher_menu" />
+          <option value="view.input" />
+          <option value="view.int" />
+          <option value="business.username" />
+          <option value="business.admin_username" />
+          <option value="tools.open" />
+          <option value="tools.reader" />
+          <option value="tools.student" />
+          <option value="tools.print" />
+          <option value="tools.FileNotFoundError" />
+          <option value="tools.teacher" />
+          <option value="tools.admin" />
+          <option value="tools.data" />
+          <option value="tools.intput" />
+          <option value="tools.int" />
+          <option value="tools.time" />
+          <option value="tools.get_zodiac" />
+          <option value="business.new_student_name" />
+          <option value="business.new_studentID" />
+          <option value="business.new_year" />
+          <option value="business.student" />
+          <option value="business.s" />
+          <option value="school.print" />
+          <option value="school.super" />
+          <option value="business.*" />
+          <option value="tools.*" />
+          <option value="requests" />
+          <option value="p9.print" />
+          <option value="p5.猴鸡狗猪鼠牛虎兔龙蛇马羊" />
+          <option value="p5.input" />
+          <option value="p5.year" />
+          <option value="p5.students1" />
+          <option value="p5.append" />
+          <option value="p5.students2" />
+          <option value="p5.shengxiao" />
+          <option value="p5.zodiac" />
+          <option value="school.student.__getitem__" />
+          <option value="view.*" />
+          <option value="json" />
+          <option value="school.admin" />
+          <option value="p10.print" />
+          <option value="p10.open" />
+          <option value="p10.important" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

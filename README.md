@@ -1,0 +1,1 @@
+All community resources: www.manim.communtity
