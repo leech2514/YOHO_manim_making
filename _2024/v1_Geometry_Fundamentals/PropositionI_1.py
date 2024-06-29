@@ -93,6 +93,8 @@ class VolumeIPropositionI(Scene):
         # 展示证明过程
         self.show_proof()
 
+        self.wait(10)
+
     def show_proof(self):
         # 证明过程中的文本内容和动画
         sentences = [
