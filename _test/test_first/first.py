@@ -42,6 +42,56 @@ class SquareToCircle(Scene):
         self.wait(2)
 
 
+class CreateAndFillTable(Scene):
+    def construct(self):
+        # Step 1: Create the table
+        table = Table(
+            [["", "", ""], ["", "", ""], ["", "", ""]],
+            col_labels=[Text("班级"), Text("性别"), Text("分数")],
+            row_labels=[Text("小王"), Text("小李"), Text("小张")],
+            include_outer_lines=True,
+        ).scale(0.75)
+
+        table_name = Text("学生信息表").scale(0.75).next_to(table, UP)
+
+        self.play(Create(table), Write(table_name))
+        self.wait(1)
+
+        # Step 2: Fill the table with data
+        data = [
+            ["1", "女", "66"],
+            ["2", "女", "75"],
+            ["1", "男", "93"]
+        ]
+
+        for i, row in enumerate(data):
+            for j, cell in enumerate(row):
+                cell_rect = table.get_highlighted_cell((i + 2, j + 2), color=YELLOW)
+                self.play(Create(cell_rect))
+                self.play(Write(Text(cell).move_to(table.get_cell((i + 2, j + 2)).get_center())))
+                self.wait(0.5)
+                # Remove the highlight
+                self.play(FadeOut(cell_rect))
+
+        self.wait(1)
+
+        # Highlight rows from second to fourth (adjust range accordingly)
+        for row_num in range(1, 4):  # Rows 2 to 4 in 1-indexed notation
+            row_cells = [table.get_cell((row_num + 1, col)) for col in range(1, 5)]
+            row_highlight = SurroundingRectangle(VGroup(*row_cells), color=YELLOW, buff=0.1)
+            self.play(Create(row_highlight))
+            self.wait(1)
+            self.play(FadeOut(row_highlight))
+
+        self.wait(2)
+
+
+# To render the scene, run the following command in your terminal:
+# manim -pql table_example.py CreateAndFillTable
+
+
+
+
 if __name__ == "__main__":
     scene = SecondExample()
     scene.render()
