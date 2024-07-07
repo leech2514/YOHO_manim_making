@@ -22,6 +22,25 @@ class VolumeIPropositionI(Scene):
 
         line_AB = Line(start=A, end=B)
 
+        text_1 = Text('《几何原本》 第一卷 命题I', font_size=35)
+        text_2 = Text('命题I：已知一个线段可做一个等边三角形', font_size=35)
+        text_3 = Text(
+            '   该命题的证明看似简单且严谨，但两千多年来却受到历代 \n'
+            '数学家的批评和挑剔, 如此简洁明了的命题，却充满了漏洞， \n'
+            '这是陈述不够充分的逻辑裂缝。\n'
+            '      1.圆的交点C的存在性？ \n'
+            '      2.为什么ABC是一个平面图形？ \n'
+            '所以在没有给定一定的前提时，上述的证明是缺乏一定的逻辑链的。',
+            font_size=30, line_spacing=1.5)
+
+        self.play(FadeIn(text_1, run_time=2))
+        self.wait(2)
+        self.play(FadeOut(text_1))
+
+        self.play(FadeIn(text_2, run_time=2))
+        self.wait(2)
+        self.play(FadeOut(text_2))
+
         label_A = Text('A', font_size=24).next_to(A, LEFT)
         label_B = Text('B', font_size=24).next_to(B, RIGHT)
         label_F = Text('F', font_size=24).next_to(F, LEFT)
@@ -93,7 +112,12 @@ class VolumeIPropositionI(Scene):
         # 展示证明过程
         self.show_proof()
 
-        self.wait(10)
+        self.wait(8)
+
+        self.play(*[FadeOut(mob) for mob in self.mobjects])
+
+        self.play(FadeIn(text_3), run_time=2)
+        self.wait(15)
 
     def show_proof(self):
         # 证明过程中的文本内容和动画
@@ -118,7 +142,7 @@ class VolumeIPropositionI(Scene):
                 text.next_to(prev_text, DOWN)
                 text.align_to(prev_text, LEFT)
             self.play(Write(text))
-            self.wait(2)
+            self.wait(3.5)
             prev_text = text
 
     def move_scene_elements(self):

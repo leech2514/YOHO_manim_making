@@ -1,5 +1,12 @@
 from manim import *
 
+config.background_color = WHITE
+config.frame_width = 10
+config.frame_height = 10
+
+config.pixel_width = 1080
+config.frame_height = 1920
+
 class Positioning(Scene):
     def construct(self):
         plane = NumberPlane()
