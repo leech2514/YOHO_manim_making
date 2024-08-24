@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 All community resources: www.manim.communtity
 
 Example command: manim -p -ql first.py class_name
@@ -14,3 +15,7 @@ Turn off your computer's security software if you have any permission_related pr
     执行的命令：manim -p -ql first.py SquareToCircle
     执行时如果出现权限相关的问题，把电脑的安全软件关一下
 """
+=======
+# YOHO_manim_making
+MANIM的应用体验
+>>>>>>> 119821f18333defc42f9b56b344284d0fa1952cd
