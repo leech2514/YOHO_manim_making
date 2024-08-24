@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/1185818338_2293186752_223132457.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_3736644125_3672774909.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_1321258732_3884323689.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_1017228297_1008586404.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_3864935126_385904060.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_1324777435_4115162460.mp4'
+file 'file:D:/Project/Manim/_2024/v1_Geometry_Fundamentals/media/videos/PropositionI_3/480p15/partial_movie_files/VolumeIPropositionIII/624642324_1704852926_209477260.mp4'
