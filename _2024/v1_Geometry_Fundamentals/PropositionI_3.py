@@ -9,6 +9,8 @@ class VolumeIPropositionIII(Scene):
         A_dot = Dot(A)
         B_dot = Dot(B)
         A_label = Text("A", font_size=25).next_to(A, LEFT)
+        # 创建一个文本对象“B”，并将其字体大小设置为25，然后将其放置在对象B的下方
+
         B_label = Text("B", font_size=25).next_to(B, DOWN)
 
         # 创建较短的线段AC，方向不同于AB
