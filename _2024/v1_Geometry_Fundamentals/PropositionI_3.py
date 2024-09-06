@@ -1,5 +1,7 @@
 from manim import *
-
+"""
+Proposition I.3: 设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c
+"""
 class VolumeIPropositionIII(Scene):
     def construct(self):
         # 创建较长的线段AB
@@ -43,6 +45,8 @@ class VolumeIPropositionIII(Scene):
         self.play(Write(AE_label))
 
         self.wait()
+
+        # TODO: 剪辑、配音
 
 
 
