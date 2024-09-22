@@ -11,7 +11,7 @@ class VolumeIPropositionIII(Scene):
         # create_logo_animation(self)
 
         logo_scene = LogoScene()
-        logo_scene.play_logo_animation()
+        logo_scene.play_logo_animation(self)
         # 创建较长的线段AB
         A = np.array([0, 0, 0])
         B = np.array([3, 0, 0])
