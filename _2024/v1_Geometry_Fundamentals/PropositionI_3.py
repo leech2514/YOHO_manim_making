@@ -1,9 +1,17 @@
+import os
+
 from manim import *
+from utils import *
 """
 Proposition I.3: 设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c
 """
 class VolumeIPropositionIII(Scene):
     def construct(self):
+        # self.renderer.init_scene(self)
+        # create_logo_animation(self)
+
+        logo_scene = LogoScene()
+        logo_scene.play_logo_animation()
         # 创建较长的线段AB
         A = np.array([0, 0, 0])
         B = np.array([3, 0, 0])
@@ -14,6 +22,16 @@ class VolumeIPropositionIII(Scene):
         # 创建一个文本对象“B”，并将其字体大小设置为25，然后将其放置在对象B的下方
 
         B_label = Text("B", font_size=25).next_to(B, DOWN)
+
+        text_1 = Text("设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c", font_size=25)\
+            .to_edge(UP + LEFT, buff=0.5)
+
+        self.play(Write(text_1))
+
+        # 3D,旋转text_1的文本360度,展示动画效果
+
+        # self.set_camera_orientation(phi=0 * DEGREES, theta=-60 * DEGREES, gamma=60 * DEGREES, distance=200)
+        # self.play(text_1.animate.rotate(360 * DEGREES, axis=UP))
 
         # 创建较短的线段AC，方向不同于AB
         c_length = 2
@@ -49,5 +67,12 @@ class VolumeIPropositionIII(Scene):
         # TODO: 剪辑、配音
 
 
+"""
+if __name__ == '__main__':
+    module_name = os.path.basename(__file__)
+    command_A = "manim -p -c '#2B2B2B' --video_dir ~/Downloads/  "
+    command_B = module_name + " " + "VolumeIPropositionIII"
+    os.system(command_A + command_B)
+"""
 
 

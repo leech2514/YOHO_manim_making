@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3529212410_2846198110_1305378983.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_2380480649_1470004223.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_1141282389_2862943438.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_3248309848_579063409.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_3239226358_4166556156.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_1141282389_869694553.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_1739453758_3675802149.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_3771847988_3675802149.mp4'
+file 'file:D:/Project/Manim/assets/logo/media/videos/logo/1080p60/partial_movie_files/LogoScene/3040924799_1978975953_3637547788.mp4'
