@@ -53,25 +53,39 @@ class LogoScene(Scene):
         :return:
         """
         # 创建渐变背景
-        background: Rectangle = Rectangle(width=config.frame_width, height=config.frame_height).set_fill(WHITE, opacity=1)
+        background: Rectangle = Rectangle(
+            width=config.frame_width,
+            height=config.frame_height
+        ).set_fill(WHITE, opacity=1)
         self.add(background)
 
         geometry_text: Text = Text("《几何原本》", font_size=80, weight=BOLD)
-        geometry_background = RoundedRectangle(corner_radius=0.2, height=geometry_text.height + 0.5,
-                                               width=geometry_text.width + 0.5, stroke_color=BLACK, stroke_width=4)
+        geometry_background = RoundedRectangle(
+            corner_radius=0.2,
+            height=geometry_text.height + 0.5,
+            width=geometry_text.width + 0.5,
+            stroke_color=BLACK,
+            stroke_width=4
+        )
         geometry_background.set_fill(BLACK, opacity=0.7)
         geometry_text.move_to(geometry_background.get_center())
 
         self.play(DrawBorderThenFill(geometry_background))
         self.play(Write(geometry_text))
-        self.wait(2)
+        self.wait(1)
 
-        # 创建文本 logo
+        # 创建文本 YOHO
         logo_text: Text = Text("YOHO", font_size=15, weight=BOLD)
         logo_text.set_color(WHITE)
 
         # 添加边框和阴影
-        logo_background: RoundedRectangle = RoundedRectangle(corner_radius=0.4, height=logo_text.height + 0.5, width=logo_text.width + 0.5, stroke_color=BLACK, stroke_width=4)
+        logo_background: RoundedRectangle = RoundedRectangle(
+            corner_radius=0.4,
+            height=logo_text.height + 0.5,
+            width=logo_text.width + 0.5,
+            stroke_color=BLACK,
+            stroke_width=4
+        )
         logo_background.set_fill(BLACK, opacity=0.7)
 
         logo_background.move_to(1.2 * UP + 2.1 * LEFT)
@@ -79,17 +93,20 @@ class LogoScene(Scene):
 
         self.play(DrawBorderThenFill(logo_background))
         self.play(Write(logo_text))
-        self.wait(2)
+        self.wait(1)
 
         self.play(logo_text.animate.scale(1.2).set_color(RED), run_time=0.5)
         self.play(logo_text.animate.scale(1 / 1.1).set_color(BLACK), run_time=0.5)
-
+        soul2 = VGroup(logo_text, logo_background)
+        self.play(
+            soul2.animate.move_to(1.2 * UP + 2.1 * RIGHT),
+            run_time=0.7
+        )
+        self.play(FadeOut(soul2), run_time=0.5)
         # 结束场景
         self.play(
             FadeOut(background),
-            FadeOut(logo_background),
             FadeOut(geometry_background),
-            FadeOut(logo_text),
             FadeOut(geometry_text),
             runtime=1
         )
