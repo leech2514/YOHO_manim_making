@@ -34,3 +34,4 @@ Example command: manim -p -ql first.py class_name Turn off your computer's secur
     3. 若执行时出现‘RuntimeError: latex failed but did not produce a log file. Check your LaTeX installation.’的错误，可执行以下命令：
         cd C:\Users\xxxx\.texlive2024\texmf-var\web2c\pdftex 
                 然后执行命令：fmtutil --all --force         # 重新生成格式文件
+

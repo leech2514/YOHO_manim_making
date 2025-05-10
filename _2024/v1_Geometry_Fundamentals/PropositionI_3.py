@@ -1,11 +1,15 @@
 import os
 
 from manim import *
+from manim import Dot, Line
+
 from utils import *
 
 """
 Proposition I.3: 设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c
 """
+
+
 class VolumeIPropositionIII(Scene):
     def construct(self):
         # 添加logo动画
@@ -23,11 +27,18 @@ class VolumeIPropositionIII(Scene):
 
         B_label = Text("B", font_size=25).next_to(B, DOWN)
 
-        text_1 = Text("设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c", font_size=25)\
+        text_1 = Text("设直线AB与直线AC平行，且直线AB与直线AC的交点为E，则有AE = c", font_size=25) \
             .to_edge(UP + LEFT, buff=0.5)
+        text_2 = Text('命题I.3：\n'
+                      '给定两条不等线段，\n'
+                      '可以在较长的线段上切取一条线段等于较短的线段',font_size=35, line_spacing=1)
 
+        self.play(Write(text_2))
+        self.wait(4)
+        self.play(FadeOut(text_2))
+        self.wait()
         self.play(Write(text_1))
-
+        self.wait()
         # 3D,旋转text_1的文本360度,展示动画效果
 
         # self.set_camera_orientation(phi=0 * DEGREES, theta=-60 * DEGREES, gamma=60 * DEGREES, distance=200)
@@ -50,20 +61,25 @@ class VolumeIPropositionIII(Scene):
 
         # 添加到场景
         self.play(Create(AB), Create(A_dot), Create(B_dot), Write(A_label), Write(B_label))
+        self.wait()
         self.play(Create(AC), Create(C_dot), Write(C_label))
+        self.wait()
         self.play(Create(circle))
+        self.wait()
         self.play(Create(E_dot), Write(E_label))
-
+        self.wait()
         # 高亮线段AE
         AE = Line(A, E, color=RED)
         self.play(Create(AE))
+        self.wait()
 
         # 标注AE和c相等
         AE_label = Text("AE = c", font_size=25).next_to(AE, UP)
         self.play(Write(AE_label))
 
         self.wait()
-        soul = VGroup(text_1, AB, A_dot, B_dot, A_label, B_label, AC, C_dot, C_label, circle, E_dot, E_label, AE, AE_label)
+        soul = VGroup(text_1, AB, A_dot, B_dot, A_label, B_label, AC, C_dot, C_label, circle, E_dot, E_label, AE,
+                      AE_label)
         self.play(FadeOut(soul))
 
         """
@@ -74,7 +90,8 @@ class VolumeIPropositionIII(Scene):
         # video11 = VolumeIPropositionII()
         # video11.construct()  # 调用第二个场景的构造函数，并不会触发动画的播放。
         # self.add(video11)  # 直接将第二个场景添加到当前场景中，并不会触发动画的播放。
-        # video11.play_animation(self)  # AttributeError: 'VolumeIPropositionII' object has no attribute 'play_animation'
+        # video11.play_animation(self)
+        # AttributeError: 'VolumeIPropositionII' object has no attribute 'play_animation'
 
         A = np.array([0, 0, 0])
         B = np.array([0.7, 0.5, 0])
@@ -87,14 +104,14 @@ class VolumeIPropositionIII(Scene):
         dot_P = Dot(point=P, color=RED)
 
         label_A = Text('A', font_size=24).next_to(A, LEFT)
-        label_B = Text('B', font_size=24).next_to(B, RIGHT+UP, buff=0.2)
+        label_B = Text('B', font_size=24).next_to(B, RIGHT + UP, buff=0.2)
         label_C = Text('C', font_size=24).next_to(C, UP)
         label_P = Text('P', font_size=24).next_to(P, DOWN)
 
         line_BC = Line(start=B, end=C)
         line_AP = Line(start=A, end=P)
 
-        #text_1 = Text('《几何原本》 第一卷 命题II', font_size=35)
+        # text_1 = Text('《几何原本》 第一卷 命题II', font_size=35)
         text_2 = Text('命题II：从一个给定的点可以引一条线段等于已知线段', font_size=35)
         # line_spacing 调整行间距
         text_3 = Text(
@@ -105,7 +122,7 @@ class VolumeIPropositionIII(Scene):
 
         # self.play(FadeIn(text_1, run_time=3))
         # self.wait(2)
-        #self.play(FadeOut(text_1))
+        # self.play(FadeOut(text_1))
 
         self.play(FadeIn(text_2, run_time=5))
         self.wait(0.5)
@@ -128,6 +145,7 @@ class VolumeIPropositionIII(Scene):
         self.play(Create(line_AP, run_time=2))
         self.wait(5)
 
+
         self.play(FadeOut(dot_P), FadeOut(line_AP), FadeOut(label_P))
         self.wait(6)
 
@@ -140,7 +158,7 @@ class VolumeIPropositionIII(Scene):
 
         anim_group1 = AnimationGroup(
             Create(circle1, run_time=4),
-            Rotate(line_AB, angle=2*PI, about_point=A, run_time=4)
+            Rotate(line_AB, angle=2 * PI, about_point=A, run_time=4)
         )
         self.play(anim_group1)
         # self.play(FadeIn(dot_F, running_start=2), Write(label_F))
@@ -148,7 +166,7 @@ class VolumeIPropositionIII(Scene):
 
         anim_group2 = AnimationGroup(
             Create(circle2, run_time=4),
-            Rotate(line_AB, angle=2*PI, about_point=B, run_time=4)
+            Rotate(line_AB, angle=2 * PI, about_point=B, run_time=4)
         )
         self.play(anim_group2)
         # self.play(FadeIn(dot_E, running_start=2), Write(label_E))
@@ -157,7 +175,7 @@ class VolumeIPropositionIII(Scene):
         intersection_points = self.find_intersection_points(A, B, line_AB.get_length())
         if len(intersection_points) == 2:
             dot_D = Dot(point=intersection_points[0], color=BLUE)
-            label_D = Text('D', font_size=24).next_to(dot_D, LEFT + UP)
+            label_D: Text = Text('D', font_size=24).next_to(dot_D, LEFT + UP)
 
             self.play(FadeIn(dot_D), Write(label_D))
             self.wait(2)
@@ -204,7 +222,7 @@ class VolumeIPropositionIII(Scene):
 
         anim_group4 = AnimationGroup(
             Create(circle3, run_time=4),
-            Rotate(line_BC, angle=2*PI, about_point=B, run_time=4)
+            Rotate(line_BC, angle=2 * PI, about_point=B, run_time=4)
         )
         self.play(anim_group4)
         self.wait(3)
@@ -213,34 +231,37 @@ class VolumeIPropositionIII(Scene):
         intersection_with_BF = self.find_line_circle_intersection(B, extended_dot_F, B, line_BC.get_length())
 
         if len(intersection_with_BF) > 0:
-            dot_G = Dot(point=intersection_with_BF[0], color=PURPLE)
+            dot_G: Dot = Dot(point=intersection_with_BF[0], color=PURPLE)
             label_G = Text('G', font_size=24).next_to(dot_G, DOWN)
             line_DG = Line(start=intersection_points[0], end=dot_G)
             self.play(FadeIn(dot_G), Write(label_G))
             self.wait(3)
 
             # 以D为圆心，DG为半径作圆
-            circle4 = Circle(radius=np.linalg.norm(intersection_points[0] - intersection_with_BF[0]), color=ORANGE, arc_center=intersection_points[0])
+            circle4 = Circle(radius=np.linalg.norm(intersection_points[0] - intersection_with_BF[0]), color=ORANGE,
+                             arc_center=intersection_points[0])
             anim_group5 = AnimationGroup(
                 Create(circle4, run_time=4),
-                Rotate(line_DG, angle=2*PI, about_point=intersection_points[0], run_time=4)
+                Rotate(line_DG, angle=2 * PI, about_point=intersection_points[0], run_time=4)
             )
             self.play(anim_group5)
             self.play(FadeOut(line_DG))
             self.wait(1)
 
             # 找到circle4和线段DE的交点
-            intersection_with_DE = self.find_line_circle_intersection(intersection_points[0], extended_dot_E, intersection_points[0], np.linalg.norm(intersection_points[0] - intersection_with_BF[0]))
+            intersection_with_DE = self.find_line_circle_intersection(intersection_points[0], extended_dot_E,
+                                                                      intersection_points[0], np.linalg.norm(
+                    intersection_points[0] - intersection_with_BF[0]))
 
             if len(intersection_with_DE) > 0:
-                dot_L = Dot(point=intersection_with_DE[0], color=TEAL)
-                label_L = Text('L', font_size=24).next_to(dot_L, LEFT + UP, buff=0.2)
+                dot_L: Dot = Dot(point=intersection_with_DE[0], color=TEAL)
+                label_L: Text = Text('L', font_size=24).next_to(dot_L, LEFT + UP, buff=0.2)
                 self.play(FadeIn(dot_L), Write(label_L))
                 self.wait(3)
 
             # 计算移动向量
             move_vector = 3 * RIGHT
-            move_vector1 = 3 * LEFT
+            move_vector1: None = 3 * LEFT
             # 移动所有对象
             self.play(
                 AnimationGroup(
@@ -279,9 +300,9 @@ class VolumeIPropositionIII(Scene):
             G_shifted = intersection_with_BF[0] + np.array([3, 0, 0])
             L_shifted = intersection_with_DE[0] + np.array([3, 0, 0])
 
-            shifted_line_AL = Line(start=A_shifted, end=L_shifted)
-            shifted_line_BG = Line(start=B_shifted, end=G_shifted)
-            shifted_line_BC = Line(start=B_shifted, end=C_shifted)
+            shifted_line_AL: Line = Line(start=A_shifted, end=L_shifted)
+            shifted_line_BG: Line = Line(start=B_shifted, end=G_shifted)
+            shifted_line_BC: Line = Line(start=B_shifted, end=C_shifted)
             # 改变线段颜色
             self.play(
                 shifted_line_BC.animate.set_color(BLUE),
@@ -334,8 +355,44 @@ class VolumeIPropositionIII(Scene):
         )
         self.wait(5)
 
+        """
+            for的用法示例：squares = [ x**2 for x in range(4)] # squares = [0, 1, 4, 9]
+            *的作用：解析列表的元素解包为独立的元素，传给外层函数play
+        """
+        self.play(
+            * [FadeOut(obj) for obj in [
+                 dot_D, dot_G, dot_E, dot_F,
+                label_D, label_E, label_F, label_G,
+                circle3, circle4, line_AB, line_AD, line_BD, extended_line_DB, extended_line_DA
+                ,shifted_line_BG
+            ]]
+        )
+        self.wait(5)
 
-    def find_intersection_points(self, A, B, r):
+        A = np.array([0, 0, 0])
+        P = np.array([0, -2, 0])
+
+        dot_A = Dot(point=A, color=RED)
+        dot_P = Dot(point=P, color=RED)
+
+        label_A = Text('A', font_size=24).next_to(A, LEFT)
+        label_P = Text('P', font_size=24).next_to(P, DOWN)
+
+        line_AP = Line(start=A, end=P)
+
+        self.play(FadeIn(dot_A), Write(label_A))
+        self.play(FadeIn(dot_P), Write(label_P))
+        self.play(Create(line_AP))
+        self.wait(1)
+        circle5 = Circle(radius=shifted_line_AL.get_length(), color=RED, arc_center=A)
+        self.play(Create(circle5))
+        self.wait(1)
+
+        self.play(FadeOut(shifted_line_AL),FadeOut(dot_A))
+        self.wait(1)
+
+    @staticmethod
+    def find_intersection_points(A, B, r):
         # A and B are the centers of the circles
         # r is the radius of the circles
         d = np.linalg.norm(B - A)
@@ -346,7 +403,8 @@ class VolumeIPropositionIII(Scene):
         intersection2 = P2 - h * np.array([-(B - A)[1], (B - A)[0], 0]) / d
         return [intersection1, intersection2]
 
-    def find_line_circle_intersection(self, A, B, C, r):
+    @staticmethod
+    def find_line_circle_intersection(A, B, C, r):
         # A and B are the endpoints of the line segment
         # C is the center of the circle
         # r is the radius of the circle
@@ -371,7 +429,7 @@ class VolumeIPropositionIII(Scene):
 
         return points
 
-    def show_proof(self):
+    def show_proof(self) -> object:
         # 证明过程中的文本内容和动画
         sentences = [
             "∵ B点是圆BCG的圆心，故BC = BG",
@@ -406,3 +464,4 @@ class VolumeIPropositionIII(Scene):
 if __name__ == '__main__':
     scene = VolumeIPropositionIII()
     scene.render()
+
