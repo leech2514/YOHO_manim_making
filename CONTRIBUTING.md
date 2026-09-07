@@ -1,4 +1,4 @@
-# YOHO_manim_making 项目开发规范
+﻿# Elements 项目开发规范
 
 > 本规范基于项目实际代码风格提炼，覆盖目录职责、命名约定、import 规则、
 > Scene 编写范式、配置约束与 git 工作流。新增代码请严格遵守。
@@ -8,7 +8,7 @@
 ## 一、目录结构与职责
 
 ```
-YOHO_manim_making/
+Elements/
 ├── common/                  # 共享代码（所有命题均可复用）
 │   ├── math_utils.py        # MathUtils 几何计算工具（唯一来源）
 │   └── scenes.py            # Logo 动画函数、场景辅助函数

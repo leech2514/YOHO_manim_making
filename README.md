@@ -1,4 +1,4 @@
-# YOHO_manim_making
+﻿# Elements
 
 基于 [Manim](https://www.manim.community/) 动画引擎复刻《几何原本》（Euclid's Elements）的几何命题演示项目。
 
@@ -23,7 +23,7 @@
 ## 目录结构
 
 ```
-YOHO_manim_making/
+Elements/
 ├── .gitignore
 ├── README.md                      # 本文件
 ├── requirements.txt               # Python 依赖
