@@ -1,4 +1,4 @@
-﻿# Euclid 项目结构整改方案
+﻿# Render 项目结构整改方案
 
 > 本文档记录项目结构评估结论与分阶段整改方案，作为本次重构的操作手册。
 
@@ -146,7 +146,7 @@ git rm --cached _test/test_second/__pycache__/test_1.cpython-311.pyc
 #### 2.1 目标目录结构
 
 ```
-Euclid/
+Render/
 ├── .gitignore
 ├── README.md                      # 重写真正的项目说明
 ├── requirements.txt
