@@ -1,0 +1,37 @@
+from manim import *
+
+"""
+    学习示例：Positioning —— 演示 shift / move_to / align_to 三种位置操作。
+    迁移自 _test/_test_f/second.py（原文件无 utils/logo 依赖，保持原样）。
+"""
+
+config.background_color = WHITE
+config.frame_width = 10
+config.frame_height = 10
+
+config.pixel_width = 1080
+config.frame_height = 1920
+
+class Positioning(Scene):
+    def construct(self):
+        plane = NumberPlane()
+        self.add(plane)
+
+        # shift
+        s = Square(color=ORANGE)
+        s.shift(2*UP + 4*RIGHT)
+        self.add(s)
+
+        # move_to
+        c = Circle(color=PURPLE)
+        c.move_to([-1, -3, -4])
+        self.add(c)
+
+        # align_to
+        c2 = Circle(radius=0.5, color=RED, fill_opacity=0.5)
+        c3 = c2.copy().set_color(YELLOW)
+        c4 = c2.copy().set_color(ORANGE)
+        c2.align_to(s, UP)
+        c3.align_to(s, RIGHT)
+        c4.align_to(s, UP + RIGHT)
+        self.add(c2, c3, c4)
